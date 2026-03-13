@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment 4 Design Studio – Connected Papers Redesign | Mianchen Zhang</title>
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1f6f8b;
+      --accent-light: #d9eef4;
+      --border: #dbe3ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eaf5f8, #f8fbfc);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    p { margin: 0 0 12px; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .byline {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .details-card {
+      margin-bottom: 24px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+      gap: 14px 18px;
+      align-items: start;
+    }
+
+    .detail-label {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .detail-value {
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    figure img {
+      width: 100%;
+      display: block;
+      height: 200px;
+      object-fit: cover;
+      background: #eef2f5;
+    }
+
+    figcaption {
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .placeholder {
+      background: #fff8db;
+      border: 1px dashed #d4b106;
+      color: #6b5a00;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .footer-note {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 700px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="tag">IS 586 / Assignment 4 Design Studio</div>
+      <h1>Connected Papers Interface Analysis and Redesign</h1>
+      <p class="byline">Mianchen Zhang</p>
+      <p class="subtitle">
+        This project analyzes and redesigns part of the Connected Papers interface, with a focus on how users explore papers related to an origin paper in the graph view.
+      </p>
+    </header>
+
+    <section class="card details-card">
+      <h2>Application Name and Details</h2>
+      <div class="details-grid">
+        <div class="detail-label">Application</div>
+        <p class="detail-value">Connected Papers</p>
+
+        <div class="detail-label">Page</div>
+        <p class="detail-value">
+          <a href="https://www.connectedpapers.com/" target="_blank" rel="noopener noreferrer">https://www.connectedpapers.com/</a>
+        </p>
+
+        <div class="detail-label">Type</div>
+        <p class="detail-value">Interactive academic literature discovery website</p>
+
+        <div class="detail-label">Feature analyzed</div>
+        <p class="detail-value">Graph-based paper exploration interface</p>
+
+        <div class="detail-label">Design focus</div>
+        <p class="detail-value">
+          We are analyzing how Connected Papers helps users explore papers related to an origin paper, interpret graph relationships, and read paper details from the side panel.
+        </p>
+
+        <div class="detail-label">Interface behavior</div>
+        <p class="detail-value">
+          The interface uses a network graph in which each node is a paper related to the origin paper. According to the website's own explanation, papers are arranged by similarity, node size indicates citation count, node color indicates publishing year, and stronger lines indicate stronger similarity.
+        </p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom: 24px;">
+      <h2>Project Summary</h2>
+      <p>
+        Our redesign project focuses on the usability of Connected Papers as an interactive literature exploration system. We are especially interested in whether the graph representation matches what users actually want to do when they search for a paper. In many cases, users are less interested in the overall similarity structure among all papers and more interested in identifying which papers are most relevant to the origin paper.
+      </p>
+      <p>
+        Based on an initial review of the interface, we identified several possible issues, including graph layout that may not match the user's main task, inconsistent information displayed in the paper detail panel, limited explanation of visual encodings, and a graph that can become visually overwhelming.
+      </p>
+    </section>
+
+    <section class="card" style="margin-bottom: 24px;">
+      <h2>Initial Usability Issues Identified</h2>
+      <ul>
+        <li><strong>Graph layout does not prioritize the user's main task:</strong> papers are arranged by similarity to each other, but users may care more about how each paper relates to the origin paper. <a href="#graph-4">Graph 4</a></li>
+        <li><strong>Inconsistent paper details:</strong> some selected papers show a description or abstract in the side panel, while others only show basic metadata. <a href="#graph-2">Graph 2</a> and <a href="#graph-3">Graph 3</a></li>
+        <li><strong>Visual encoding is easy to miss:</strong> node size, color, and line strength are explained in a separate help panel rather than being integrated into the graph view. <a href="#graph-1">Graph 1</a> and <a href="#graph-4">Graph 4</a></li>
+        <li><strong>The graph can feel visually dense:</strong> the number of nodes, labels, and connections may increase cognitive load for users. <a href="#graph-4">Graph 4</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="reference-screenshots" style="margin-bottom: 24px;">
+      <h2>Reference Screenshots</h2>
+      <p>These screenshots document the current interface and will be used to support our later analysis and redesign ideas.</p>
+      <div class="image-grid">
+        <figure id="graph-1">
+          <img src="images/graph1.jpg" alt="Connected Papers how to read the graph explanation" />
+          <figcaption><strong>Graph 1.</strong> The built-in explanation of the graph: node similarity, citation-based size, year-based color, and connection strength.</figcaption>
+        </figure>
+        <figure id="graph-2">
+          <img src="images/graph2.jpg" alt="Connected Papers graph with selected paper and side panel including abstract" />
+          <figcaption><strong>Graph 2.</strong> Graph view with another selected paper and a side panel that includes a description or abstract.</figcaption>
+        </figure>
+        <figure id="graph-3">
+          <img src="images/graph3.jpg" alt="Connected Papers graph with selected paper and side panel without abstract" />
+          <figcaption><strong>Graph 3.</strong> Graph view with a selected paper and a side panel that shows metadata but no description.</figcaption>
+        </figure>
+        <figure id="graph-4">
+          <img src="images/graph4.png" alt="Connected Papers graph close-up" />
+          <figcaption><strong>Graph 4.</strong> Close-up of the graph showing node density, edge overlap, and label crowding.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Next Steps</h2>
+      <ul>
+        <li>Conduct an observational user study focused on literature discovery tasks.</li>
+        <li>Document concrete usability problems from user interactions.</li>
+        <li>Create low-fidelity redesign sketches for the graph and paper detail panel.</li>
+        <li>Explain how the redesign better supports user goals and reduces confusion.</li>
+      </ul>
+      <p class="footer-note">
+        This page is an initial project page for the Design Studio forum post and will be expanded as the assignment develops.
+      </p>
+    </section>
+  </div>
+</body>
+</html>
